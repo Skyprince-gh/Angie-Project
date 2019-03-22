@@ -1,0 +1,112 @@
+@import 'reset';
+@import 'variables';
+
+body.patient-list{
+  
+    display: grid;
+    grid-template-columns: 10% 60% auto;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    .left-side{
+       background-color: white;
+       grid-column-start: 1;
+       grid-column-end: 2;
+       height: 100vh;  
+       background:#878787; 
+        
+    }
+
+    .center{               
+        
+        height: 100vh;
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        h1{
+            width: 90%;
+            margin: 20px auto;
+            margin-top: 70px;
+            box-sizing: border-box;
+            padding: 20px;
+            padding-left: 50px;
+            background:#cecece;
+            color: $grey;
+            box-shadow: $shadow2;
+        }
+
+        .appointment-card{
+            display: grid;
+            grid-template-columns: repeat(4, 24%) auto;
+            width: 90%;
+            margin: 20px auto;
+            background: white;
+            box-sizing: border-box;
+            padding: 20px;
+            box-shadow: $shadow;
+            color: $grey;
+            
+            h3{
+                color:#1B9DA7;
+                font-size: 14px;
+            }
+
+            .material-icons{
+                text-align: center;
+                transform: translate(0, 50%);
+                font-size: 30px;
+                line-height: 26px;
+            }
+
+
+        }
+    }
+
+    .right-side{
+        //background-color: blue;
+        display: grid;
+        height: 100vh;
+        grid-template-rows: repeat(fit-content(3) ,auto);
+        
+        .box{
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            box-shadow: $shadow2;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+
+            h3{
+                color: $rh3; 
+                font-weight: bold;
+                font-size: 25px;
+            }
+            
+            p{
+                font-size: 24px;
+                margin: 20px auto;
+                color: $grey;
+            }
+
+        }
+
+        .average-booking-per-day{
+            p{
+                font-size: 100px;
+                font-weight: bold;
+                color: #70BE61;
+            }
+        }
+        .failed-number-of-bookings{
+            p{
+                font-size: 100px;
+                font-weight: bold;
+                color: #DF5D5D;
+            }
+        }
+
+                    
+    }
+} 

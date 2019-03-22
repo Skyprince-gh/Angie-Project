@@ -1,0 +1,248 @@
+//importing external css
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+//for material design elements
+.material{
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
+}
+//for personal styles normal is the class given if you want to style independently of 
+//any css framework
+.normal{ 
+ input[type="text"], input[type="email"],input[type="number"],input[type="password"]
+ {
+     display: block;
+     height:50px;
+     width: 70%;
+     background: none;
+     padding-left: 20px;
+     margin: 0 0;
+     //transform: translateX(-30px);
+     color: $white;
+     margin-top: $marginTop;
+     @include border; //settings for the border
+
+     &::focus{
+         border-bottom: solid $white;
+     }
+     
+ } 
+ 
+ //styles for text areas
+ textarea{
+     border-radius: 25px;
+     display: block;
+     width: 80%;
+     height: 250px;
+     @include border;
+     padding: 20px;
+     color: $white;
+     margin-top: 40px;
+ }
+
+ //styles for labels on the form
+ label[for="male"],label[for="female"]{
+     display: inline-block;
+     opacity: 1;
+     color: $white;
+     padding-left: 24px;
+     font-size: 16px;
+     background: url('/assets/images/baseline-check_box_outline_blank-24px.svg') no-repeat;
+ }
+ //styles for inputs of type radio
+ input[type="radio"]{
+     box-sizing: border-box;
+     position: relative;
+     top: 5px;
+     line-break: 24px;
+     width: 0px;
+     height: 0px;
+     background: none;     
+ }
+
+ //styles for input of type radio when checked or unchecked
+ input:checked + label[for="male"],
+ input:checked + label[for="female"]{
+     background: url('/assets/images/outline-check_box-24px.svg') no-repeat;
+ }
+
+ //styles for the submit button.
+ input[type="submit"]{
+     @include button(1);
+    left: -40%;
+ }
+ 
+ //styles for fieldsets
+ fieldset{
+     margin: 20px auto;
+     border: none;
+     padding-top: 5px;
+     legend{
+         color:$white;
+         font-weight: bold;
+     }
+ }
+ 
+}
+
+//styles for the main form window
+.form-window{
+    padding: 30px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    height: 60%;
+    background: $black2;
+    overflow-y: scroll;
+    border-radius: 0 25px 25px 25px ;
+    visibility: hidden; 
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 10px;
+
+    .instructions{
+        margin: 30px auto;
+        color: white;
+        font-size: 20px;        
+    }
+
+    //this style changes the looks of the close button
+    .close{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: $blue-grey;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        left: 95%;
+        bottom: 5px;
+        z-index: 5;
+        cursor: pointer;
+        //when you hover over the close button.
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.8) 2px 2px 4px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+//styles for the scrollbar of the form-window
+//changes the look of the scrollbar itself
+.form-window::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0);
+    max-height: 10px;
+    margin: 50px 0;
+}
+.form-window::-webkit-scrollbar{
+    width: 5px;
+    background: rgba(0,0,0,0);
+    max-height: 10px;
+    margin: 50px 0;
+}
+.form-window::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: $white;//rgb(41, 41, 41);
+    max-height: 10px;
+    margin: 50px 0;
+}
+
+//styles for the body of the main page
+body{
+    background: url('/assets/images/portal_bkg.jpg');
+    background-position:  0px 0px;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+    
+}
+
+//styles for the main portal window which houses the four divisions.
+.portal-window
+{
+    //background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 50%;
+    height: 70%;
+  //margin: 0 auto;
+
+  //styles for each division inside the portal window.
+  .col
+  {
+      cursor: pointer;
+      height: 50%;
+        .title, .description
+        {
+            position: relative;
+            @include position(100px);
+            cursor: pointer;
+        }
+      button{
+        @include button(0);
+        @include position(100px);
+    }
+    button.button-inverse
+    {            
+        border: solid $black;
+        color: $black; 
+        @include position(100px);
+    }
+    
+}
+       
+           
+        
+}
+
+
+//Success Page
+.success{
+    background: skyblue;
+
+    p.appMssg{
+        font-size: 36px;
+        width: 80%;
+        margin: 0 auto;
+        color: white;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        
+        .name,.email{
+            color: lightpink;
+        }
+    }
+
+}
+
+//staff Login
+.staff{
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default){
+        margin: 50px auto;
+    }
+
+    .portal-window{
+        height: 50%;
+        position:absolute;
+        left: 25%;
+        top:25%;
+
+        input[type="submit"]{
+            //transform:translateX(40%);
+            left: 0%;
+        }
+        
+    }
+}

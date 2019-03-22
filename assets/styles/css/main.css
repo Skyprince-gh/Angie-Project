@@ -1,0 +1,209 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css");
+* {
+  margin: 0;
+  padding: 0; }
+
+.material { }
+
+.normal input[type="text"], .normal input[type="email"], .normal input[type="number"], .normal input[type="password"] {
+  display: block;
+  height: 50px;
+  width: 70%;
+  background: none;
+  padding-left: 20px;
+  margin: 0 0;
+  color: white;
+  margin-top: 20px;
+  border: solid white 2px;
+  border-radius: 25px; }
+  .normal input[type="text"]::focus, .normal input[type="email"]::focus, .normal input[type="number"]::focus, .normal input[type="password"]::focus {
+    border-bottom: solid white; }
+
+.normal textarea {
+  border-radius: 25px;
+  display: block;
+  width: 80%;
+  height: 250px;
+  border: solid white 2px;
+  border-radius: 25px;
+  padding: 20px;
+  color: white;
+  margin-top: 40px; }
+
+.normal label[for="male"], .normal label[for="female"] {
+  display: inline-block;
+  opacity: 1;
+  color: white;
+  padding-left: 24px;
+  font-size: 16px;
+  background: url("/assets/images/baseline-check_box_outline_blank-24px.svg") no-repeat; }
+
+.normal input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  top: 5px;
+  line-break: 24px;
+  width: 0px;
+  height: 0px;
+  background: none; }
+
+.normal input:checked + label[for="male"],
+.normal input:checked + label[for="female"] {
+  background: url("/assets/images/outline-check_box-24px.svg") no-repeat; }
+
+.normal input[type="submit"] {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid white;
+  border-radius: 20px;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  opacity: 1;
+  top: 10px;
+  left: -40%; }
+
+.normal fieldset {
+  margin: 20px auto;
+  border: none;
+  padding-top: 5px; }
+  .normal fieldset legend {
+    color: white;
+    font-weight: bold; }
+
+.form-window {
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 60%;
+  background: #313030;
+  overflow-y: scroll;
+  border-radius: 0 25px 25px 25px;
+  visibility: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 10px; }
+  .form-window .instructions {
+    margin: 30px auto;
+    color: white;
+    font-size: 20px; }
+  .form-window .close {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #455a64;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    left: 95%;
+    bottom: 5px;
+    z-index: 5;
+    cursor: pointer; }
+    .form-window .close:hover {
+      -webkit-box-shadow: rgba(0, 0, 0, 0.8) 2px 2px 4px;
+      box-shadow: rgba(0, 0, 0, 0.8) 2px 2px 4px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%; }
+
+.form-window::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  max-height: 10px;
+  margin: 50px 0; }
+
+.form-window::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(0, 0, 0, 0);
+  max-height: 10px;
+  margin: 50px 0; }
+
+.form-window::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: white;
+  max-height: 10px;
+  margin: 50px 0; }
+
+body {
+  background: url("/assets/images/portal_bkg.jpg");
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.portal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 70%; }
+  .portal-window .col {
+    cursor: pointer;
+    height: 50%; }
+    .portal-window .col .title, .portal-window .col .description {
+      position: relative;
+      top: 100px;
+      cursor: pointer; }
+    .portal-window .col button {
+      width: 100px;
+      height: 40px;
+      position: relative;
+      background: none;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: solid white;
+      border-radius: 20px;
+      color: white;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      opacity: 0;
+      top: 10px;
+      top: 100px; }
+    .portal-window .col button.button-inverse {
+      border: solid black;
+      color: black;
+      top: 100px; }
+
+.success {
+  background: skyblue; }
+  .success p.appMssg {
+    font-size: 36px;
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%; }
+    .success p.appMssg .name, .success p.appMssg .email {
+      color: lightpink; }
+
+.staff input[type=text]:not(.browser-default),
+.staff input[type=password]:not(.browser-default) {
+  margin: 50px auto; }
+
+.staff .portal-window {
+  height: 50%;
+  position: absolute;
+  left: 25%;
+  top: 25%; }
+  .staff .portal-window input[type="submit"] {
+    left: 0%; }

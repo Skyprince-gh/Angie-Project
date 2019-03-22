@@ -1,0 +1,32 @@
+@mixin position($amount){
+    top: $amount;
+}
+
+@mixin border {
+    border: solid white 2px;
+    border-radius: 25px;
+}
+
+@mixin button($opacity) {
+        width: 100px;
+        height: 40px;
+        position: relative;
+        background: none;
+        box-sizing: border-box;
+        border: solid $white;
+        border-radius: 20px;
+        color: $white;
+        display:block;
+        margin: 0 auto;
+        margin-top: 20px;
+        opacity: $opacity;
+        @include position(10px);
+}
+
+@mixin mid-grid
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

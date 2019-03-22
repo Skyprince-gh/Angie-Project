@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body.patient-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 60% auto;
+  grid-template-columns: 10% 60% auto;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body.patient-list .left-side {
+    background-color: white;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: 2;
+    height: 100vh;
+    background: #878787; }
+  body.patient-list .center {
+    height: 100vh;
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    -ms-grid-column-span: 1;
+    grid-column-end: 3; }
+    body.patient-list .center h1 {
+      width: 90%;
+      margin: 20px auto;
+      margin-top: 70px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px;
+      padding-left: 50px;
+      background: #cecece;
+      color: #707070;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.16) 2px 2px 6px;
+      box-shadow: rgba(0, 0, 0, 0.16) 2px 2px 6px; }
+    body.patient-list .center .appointment-card {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: (24%)[4] auto;
+      grid-template-columns: repeat(4, 24%) auto;
+      width: 90%;
+      margin: 20px auto;
+      background: white;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 6px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 6px;
+      color: #707070; }
+      body.patient-list .center .appointment-card h3 {
+        color: #1B9DA7;
+        font-size: 14px; }
+      body.patient-list .center .appointment-card .material-icons {
+        text-align: center;
+        -webkit-transform: translate(0, 50%);
+        -ms-transform: translate(0, 50%);
+        transform: translate(0, 50%);
+        font-size: 30px;
+        line-height: 26px; }
+  body.patient-list .right-side {
+    display: -ms-grid;
+    display: grid;
+    height: 100vh;
+    -ms-grid-rows: (auto)[fit-content(3)];
+    grid-template-rows: repeat(fit-content(3), auto); }
+    body.patient-list .right-side .box {
+      width: 250px;
+      height: 250px;
+      margin: 20px auto;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.16) 2px 2px 6px;
+      box-shadow: rgba(0, 0, 0, 0.16) 2px 2px 6px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center; }
+      body.patient-list .right-side .box h3 {
+        color: #4AB1B9;
+        font-weight: bold;
+        font-size: 25px; }
+      body.patient-list .right-side .box p {
+        font-size: 24px;
+        margin: 20px auto;
+        color: #707070; }
+    body.patient-list .right-side .average-booking-per-day p {
+      font-size: 100px;
+      font-weight: bold;
+      color: #70BE61; }
+    body.patient-list .right-side .failed-number-of-bookings p {
+      font-size: 100px;
+      font-weight: bold;
+      color: #DF5D5D; }
