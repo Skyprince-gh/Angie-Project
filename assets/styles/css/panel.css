@@ -22,7 +22,8 @@ body.patient-list {
     -ms-grid-column: 2;
     grid-column-start: 2;
     -ms-grid-column-span: 1;
-    grid-column-end: 3; }
+    grid-column-end: 3;
+    overflow: scroll; }
     body.patient-list .center h1 {
       width: 90%;
       margin: 20px auto;
@@ -48,7 +49,13 @@ body.patient-list {
       padding: 20px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 6px;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 6px;
-      color: #707070; }
+      color: #707070;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+      cursor: pointer; }
+      body.patient-list .center .appointment-card:hover {
+        width: 95%; }
       body.patient-list .center .appointment-card h3 {
         color: #1B9DA7;
         font-size: 14px; }

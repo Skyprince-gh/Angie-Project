@@ -23,6 +23,7 @@ body.patient-list{
         height: 100vh;
         grid-column-start: 2;
         grid-column-end: 3;
+        overflow: scroll;
 
         h1{
             width: 90%;
@@ -46,10 +47,17 @@ body.patient-list{
             padding: 20px;
             box-shadow: $shadow;
             color: $grey;
+            transition: .5s;
+            cursor: pointer;
+
+            &:hover{
+                width: 95%;
+            }
             
             h3{
                 color:#1B9DA7;
                 font-size: 14px;
+
             }
 
             .material-icons{

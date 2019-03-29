@@ -228,9 +228,17 @@ body{
 
 //staff Login
 .staff{
+    p{
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
     input[type=text]:not(.browser-default),
     input[type=password]:not(.browser-default){
-        margin: 50px auto;
+        margin: 40px auto;
     }
 
     .portal-window{
@@ -238,6 +246,7 @@ body{
         position:absolute;
         left: 25%;
         top:25%;
+        width: 40%;
 
         input[type="submit"]{
             //transform:translateX(40%);

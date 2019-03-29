@@ -196,14 +196,24 @@ body {
     .success p.appMssg .name, .success p.appMssg .email {
       color: lightpink; }
 
+.staff p {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding-top: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .staff input[type=text]:not(.browser-default),
 .staff input[type=password]:not(.browser-default) {
-  margin: 50px auto; }
+  margin: 40px auto; }
 
 .staff .portal-window {
   height: 50%;
   position: absolute;
   left: 25%;
-  top: 25%; }
+  top: 25%;
+  width: 40%; }
   .staff .portal-window input[type="submit"] {
     left: 0%; }

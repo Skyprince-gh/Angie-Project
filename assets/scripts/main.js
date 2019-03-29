@@ -85,6 +85,11 @@ closeBtn.onclick = function(){
 
 });
 
+var submit = document.querySelector('.staff input[type="submit"]');
+closeBtn.onclick = function(e){
+  e.preventDefault();
+}
+
 
 
 

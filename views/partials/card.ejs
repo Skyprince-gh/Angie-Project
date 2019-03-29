@@ -1,23 +1,23 @@
-<div class="appointment-card" id="firebase-id">
+<div class="appointment-card" id=<%=patient.id %>>
     <div class="name">
         <h3>Name</h3>
-        <p>Ahenkan Asante</p>
+        <p><%=patient.data.name%></p>
     </div>
     <div class="id">
         <h3>ID</h3>
-        <p>12345678</p>
+        <p><%=patient.data.id%></p>
     </div>
     <div class="gender">
         <h3>Gender</h3>
-        <p>Male</p>
+        <p><%=patient.data.gender%></p>
     </div>
     <div class="appointment-time">
         <h3>Appointment Time</h3>
-        <p>17 March 2019 4:29 p.m</p>
+        <p><%=patient.data.time.toDate()%></p>
     </div>
     <div>
         <i class="material-icons">
             more_vert
-            </i>
+        </i>
     </div>
 </div>
