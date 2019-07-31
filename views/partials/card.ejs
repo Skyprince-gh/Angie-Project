@@ -1,23 +1,26 @@
-<div class="appointment-card" id=<%=patient.id %>>
-    <div class="name">
-        <h3>Name</h3>
-        <p><%=patient.data.name%></p>
+
+    <div class="appointment-card " id=<%=patient.id %>>
+        <div class="name">
+            <h3>Name</h3>
+            <p><%=patient.data.name%></p>
+        </div>
+        <div class="id">
+            <h3>ID</h3>
+            <p class="nhis"><%=patient.data.id%></p>
+        </div>
+        <div class="gender">
+            <h3>Gender</h3>
+            <p><%=patient.data.gender%></p>
+        </div>
+        <div class="appointment-time">
+            <h3>Appointment Time</h3>
+            <p><%=patient.data.time.toDate()%></p>
+        </div>
+        <div> 
+            <ul>
+                <li><a class="green-text" href="#!">Check In</a></li>
+                <li><a class="red-text" href="#!">Cancel</a></li>
+            </ul>
+        </div>
+    
     </div>
-    <div class="id">
-        <h3>ID</h3>
-        <p><%=patient.data.id%></p>
-    </div>
-    <div class="gender">
-        <h3>Gender</h3>
-        <p><%=patient.data.gender%></p>
-    </div>
-    <div class="appointment-time">
-        <h3>Appointment Time</h3>
-        <p><%=patient.data.time.toDate()%></p>
-    </div>
-    <div>
-        <i class="material-icons">
-            more_vert
-        </i>
-    </div>
-</div>

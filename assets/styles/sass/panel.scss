@@ -1,7 +1,10 @@
 @import 'reset';
 @import 'variables';
+@import 'mixins';
 
-body.patient-list{
+
+
+body.patient-list{   
   
     display: grid;
     grid-template-columns: 10% 60% auto;
@@ -14,18 +17,26 @@ body.patient-list{
        grid-column-start: 1;
        grid-column-end: 2;
        height: 100vh;  
-       background:#878787; 
+       background:#878787;  
         
     }
 
-    .center{               
-        
+    .center{
+
+        .material{
+        @import "material/materialize.scss";
+        }
+           
+                    
+        h2.center{
+            text-align: center;
+        }
         height: 100vh;
         grid-column-start: 2;
         grid-column-end: 3;
         overflow: scroll;
 
-        h1{
+        h1{ 
             width: 90%;
             margin: 20px auto;
             margin-top: 70px;
@@ -35,11 +46,32 @@ body.patient-list{
             background:#cecece;
             color: $grey;
             box-shadow: $shadow2;
+
+            span{
+                display: inline-block;
+                margin-left: 50px;
+                // width: 200px;
+                // height: 50px;
+
+                input[type="number"]{
+                    display: inline-block;
+                    width: 300px;
+                    height: 50px;
+                    padding-left: 20px;
+                    font-size: 24px;
+                    outline: none;
+                    -webkit-outer-spin-button{
+                        display: none;
+                        -webkit-appearance: textfield;
+                    }
+                }
+            }
+
         }
 
         .appointment-card{
             display: grid;
-            grid-template-columns: repeat(4, 24%) auto;
+            grid-template-columns: repeat(5, 20%) auto;
             width: 90%;
             margin: 20px auto;
             background: white;
@@ -57,7 +89,6 @@ body.patient-list{
             h3{
                 color:#1B9DA7;
                 font-size: 14px;
-
             }
 
             .material-icons{
@@ -66,10 +97,25 @@ body.patient-list{
                 font-size: 30px;
                 line-height: 26px;
             }
+            ul{
+                padding:20px;
+                margin-left: 40px;
+                li{
+                    margin-top: 20px;
+                }
+            }
 
 
         }
     }
+
+    .checked{
+        background-color: yellowgreen !important;
+    }
+    .cancelled{
+        background-color: red !important;
+    }
+
 
     .right-side{
         //background-color: blue;
@@ -98,6 +144,8 @@ body.patient-list{
                 color: $grey;
             }
 
+            cursor: pointer;
+
         }
 
         .average-booking-per-day{
@@ -115,6 +163,6 @@ body.patient-list{
             }
         }
 
-                    
+        overflow: hidden;          
     }
 } 
