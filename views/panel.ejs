@@ -32,20 +32,25 @@
         </div>
         
           <div class="right-side">
-                <div class=" box booking-details">
+                <!-- <div class=" box booking-details">
                     <h3>Booking Details</h3>
-                    <p>Todays Total: <%= patientList.length %></p>
-                    <p>Completed 109</p>
+                    <p>Total Number of Bookings: <%= patientList.length %></p>
+                    <p id="confirmed">Confirmed:  </p>
                 </div>
-        
-                <div class=" box average-booking-per-day">
-                    <h3>Average Booking Per Day</h3>
-                    <p>179</p>
+         -->
+                <div class=" box number-of-bookings">
+                    <h3>Number of Bookings Left</h3>
+                    <p><%= patientList.length %></p>
+                </div>
+
+                <div class=" box confirmed-bookings">
+                    <h3>Confirmed Bookings</h3>
+                    <p id="confirmed">179</p>
                 </div>
         
                 <div class=" box failed-number-of-bookings">
                     <h3>Cancelled Bookings</h3>
-                    <p>5</p>
+                    <p id="cancelled">10</p>
                 </div>
             </div>
           

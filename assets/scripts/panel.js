@@ -1,5 +1,7 @@
 window.onload = function () {
     //alert();
+    getCompletedAndCancelled();
+
     $('.dropdown-trigger').dropdown();
     let searchBox = document.querySelector('#search-box');
     let list = document.querySelector('#list');
@@ -35,6 +37,23 @@ window.onload = function () {
                     })
                 }
             })
+        })
+    }
+
+    function getCompletedAndCancelled(){
+        $.ajax({
+            type: 'GET',
+            url: '/completed-and-cancelled',
+            success: function(data){
+               console.log('complete and cancelled: ', data);
+               let confirmed = document.querySelector('#confirmed');
+               let cancelled = document.querySelector('#cancelled');
+                confirmed.innerText = data.complete; //number of complete appointments
+                cancelled.innerText = data.cancelled; //number of cancelled appointments
+            }, 
+            error: function(err){
+                console.log(err) //log error to the console.
+            }
         })
     }
 

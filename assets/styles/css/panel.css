@@ -6209,10 +6209,14 @@ body.patient-list {
         font-size: 24px;
         margin: 20px auto;
         color: #707070; }
-    body.patient-list .right-side .average-booking-per-day p {
+    body.patient-list .right-side .number-of-bookings p {
       font-size: 100px;
       font-weight: bold;
-      color: #70BE61; }
+      color: #0874a7; }
+    body.patient-list .right-side .confirmed-bookings p {
+      font-size: 100px;
+      font-weight: bold;
+      color: #46ff4f; }
     body.patient-list .right-side .failed-number-of-bookings p {
       font-size: 100px;
       font-weight: bold;

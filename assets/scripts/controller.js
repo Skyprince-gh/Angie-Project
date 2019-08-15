@@ -38,25 +38,89 @@ var controller = function (app) {
 
     });
 
+    //checks the completed and cancelled document to update the UI on the front-end.
+    app.get('/completed-and-cancelled', function (req, res) {
+        var document = "kjUmJi1rklR072iARSGe";
+        firebase.database.collection('completed-and-cancelled').doc(document).get().then(doc => {
+            var activityDoc;
+            activityDoc = doc.data(); //assign to variable.
+            console.log(activityDoc); //log
+            res.send(activityDoc); //send to front-end
+        })
+    })
+
 
     app.post('/checkAppointmentStatus', urlEncodedParser, function (req, res) {
         console.log('appointment status: ', req.body.id);
         console.log('appointment status: ', req.body.status);
+        var document = "kjUmJi1rklR072iARSGe";
 
+        //if the appointment is confirmed
         if (req.body.status === "Check In") {
+            firebase.database.collection('completed-and-cancelled').doc(document).get().then(doc => {
+                console.log(doc.data())
+                var cancelled; //store number of cancelled appointments
+                var confirmed; //store number of confirmed appointments
+
+                cancelled = doc.data().cancelled;
+                confirmed = doc.data().complete;
+
+                //log to console.
+                console.log('cancelled: ', cancelled);
+                console.log('confirmed: ', confirmed);
+
+                confirmed += 1;
+
+                console.log('confirmed: ', confirmed); //log
+
+                firebase.database.collection('completed-and-cancelled').doc(document).update({
+                    complete: confirmed
+                })
+
+            });
+
+
             firebase.database.collection('Patients').doc(req.body.id).update({
                 checked: true
             })
+            
             res.send('checked');
-        }
-        else if(req.body.status === "Cancel"){
-            firebase.database.collection('Patients').doc(req.body.id).update({
-                cancelled: true
-            })
-            res.send('cancelled');
 
             firebase.database.collection('Patients').doc(req.body.id).delete()
-            
+        }
+
+        //if the user cancels the appointment
+        else if (req.body.status === "Cancel") {
+            var document = "kjUmJi1rklR072iARSGe";
+
+            firebase.database.collection('completed-and-cancelled').doc(document).get().then(doc => {
+                console.log(doc.data())
+                var cancelled; //store number of cancelled appointments
+                var confirmed; //store number of confirmed appointments
+
+                cancelled = doc.data().cancelled;
+                confirmed = doc.data().complete;
+
+                //log to console.
+                console.log('cancelled: ', cancelled);
+                console.log('confirmed: ', confirmed);
+
+                cancelled += 1;
+
+                console.log('confirmed: ', cancelled); //log
+
+                firebase.database.collection('completed-and-cancelled').doc(document).update({
+                    cancelled: cancelled
+                })
+
+                firebase.database.collection('Patients').doc(req.body.id).update({
+                    cancelled: true
+                })
+                res.send('cancelled');
+
+                firebase.database.collection('Patients').doc(req.body.id).delete()
+
+            })
         }
 
 
